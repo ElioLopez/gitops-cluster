@@ -1,0 +1,44 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: cloudflare-ddns
+  namespace: kube-system
+spec:
+  schedule: "*/20 * * * *"
+  successfulJobsHistoryLimit: 3
+  failedJobsHistoryLimit: 3  
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+            - name: cloudflare-ddns
+              image: mirioeggmann/cloudflare-ddns:latest
+              env:
+               - name: ZONE_ID
+                 valueFrom:
+                   secretKeyRef:
+                     name: cloudflare-ddns
+                     key:  ZONE_ID
+               - name: RECORD_ID
+                 valueFrom:
+                   secretKeyRef:
+                     name: cloudflare-ddns
+                     key:  RECORD_ID
+               - name: API_TOKEN
+                 valueFrom:
+                   secretKeyRef:
+                     name: cloudflare-ddns
+                     key:  API_TOKEN
+               - name: NAME
+                 valueFrom:
+                   secretKeyRef:
+                     name: cloudflare-ddns
+                     key:  NAME
+               - name: PROXIED
+                 valueFrom:
+                   secretKeyRef:
+                     name: cloudflare-ddns
+                     key:  PROXIED
+          restartPolicy: OnFailure
+
