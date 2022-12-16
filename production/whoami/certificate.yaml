@@ -6,8 +6,8 @@ spec:
   secretName: origin-cert
   dnsNames:
     - whoami.elizondo.cloud
-  duration: 168h
-  renewBefore: 24h
+  duration: 168h0m0s
+  renewBefore: 24h0m0s
   issuerRef:
     group: cert-manager.k8s.cloudflare.com
     kind: OriginIssuer
