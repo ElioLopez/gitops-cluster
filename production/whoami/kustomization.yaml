@@ -4,5 +4,6 @@ kind: Kustomization
 resources:
 - deployment.yaml
 - origin-ca-service-key.yaml
+- origin-issuer.yaml
 
 namespace: whoami
