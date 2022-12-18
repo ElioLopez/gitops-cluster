@@ -6,5 +6,6 @@ resources:
 
 patchesStrategicMerge:
 - argocd-cmd-params-cm-patch.yml
+- argocd-tls.yml
 
 namespace: argocd
