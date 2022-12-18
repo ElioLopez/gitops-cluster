@@ -9,5 +9,8 @@ kubectl create secret generic cloudflare-ddns \
 --from-literal=PROXIED=true \
 --from-literal=ZONE_ID=xxxxxx \
 --from-literal=API_TOKEN=xxxxxx \
---output json --dry-run=client  | kubeseal --controller-name sealed-secrets -n kube-system  > cloudflare-ddns-sealed-secrets.yml
+--output json --dry-run=client  | kubeseal \ 
+--scope cluster-wide \ 
+--controller-name sealed-secrets \ 
+-n kube-system  > cloudflare-ddns-sealed-secrets.yml
 ```
