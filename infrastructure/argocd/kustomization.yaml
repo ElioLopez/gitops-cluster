@@ -4,6 +4,7 @@ kind: Kustomization
 resources:
 - https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
 - argocd-tls.yml
+- ingressroute.yaml
 
 patchesStrategicMerge:
 - argocd-cmd-params-cm-patch.yml
