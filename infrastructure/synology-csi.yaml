@@ -10,8 +10,8 @@ spec:
 
   # Source of the application manifests
   source:
-    repoURL: https://github.com/christian-schlichtherle
-    chart: synology-csi-chart  # Set this when pulling directly from a Helm repo. DO NOT set for git-hosted Helm charts.
+    repoURL: https://github.com/christian-schlichtherle/synology-csi-chart
+#    chart: synology-csi-chart  # Set this when pulling directly from a Helm repo. DO NOT set for git-hosted Helm charts.
     targetRevision: v0.5.0
     helm:
       # Values file as block file
@@ -32,7 +32,7 @@ spec:
   destination:
     server: https://kubernetes.default.svc
     # The namespace will only be set for namespace-scoped resources that have not set a value for .metadata.namespace
-    namespace: synology-nas
+    namespace: guestbook
 
   # Sync policy
   syncPolicy:
