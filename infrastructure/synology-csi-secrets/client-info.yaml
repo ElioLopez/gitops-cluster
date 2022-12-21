@@ -1,6 +1,0 @@
-clients:
-- host: SYNOLOGY_IP
-  username: USERNAME
-  password: PASSWORD
-  https: false
-  port: 5000

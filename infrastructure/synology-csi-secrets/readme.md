@@ -1,7 +1,16 @@
 ## create sealed secrets
 
-for synology CSI driver the sealed secrets are created from a yaml file
-more info on: https://github.com/bitnami-labs/sealed-secrets
+for synology CSI driver the sealed secrets are created from a yaml file:
+
+```
+cat client-info.yaml
+clients:
+- host: SYNOLOGY_IP
+  username: USERNAME
+  password: PASSWORD
+  https: false
+  port: 5000
+```
 
 ```
 kubectl create secret generic synology-csi \
@@ -9,5 +18,7 @@ kubectl create secret generic synology-csi \
 --output json --dry-run=client | kubeseal \
 --scope cluster-wide \
 --controller-name sealed-secrets \
--n kube-system  >  synology-csi-sealed-secrets.yml
+-n kube-system  >  sealed-secrets.yaml
 ```
+
+more info on: https://github.com/bitnami-labs/sealed-secrets
