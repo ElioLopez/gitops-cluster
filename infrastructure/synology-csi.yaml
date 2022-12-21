@@ -10,9 +10,9 @@ spec:
 
   # Source of the application manifests
   source:
-    repoURL: https://github.com/christian-schlichtherle/synology-csi-chart
-#    chart: synology-csi-chart  # Set this when pulling directly from a Helm repo. DO NOT set for git-hosted Helm charts.
-    targetRevision: v0.5.0
+    repoURL: https://eliolopez.github.io/charts
+    chart: synology-csi  # Set this when pulling directly from a Helm repo. DO NOT set for git-hosted Helm charts.
+    version: 0.3.1-SNAPSHOT
     helm:
       # Values file as block file
       values: |
