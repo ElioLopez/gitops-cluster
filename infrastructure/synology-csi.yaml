@@ -12,6 +12,7 @@ spec:
   source:
     repoURL: https://github.com/christian-schlichtherle/synology-csi-chart
     chart: synology-csi-chart  # Set this when pulling directly from a Helm repo. DO NOT set for git-hosted Helm charts.
+    targetRevision: v0.5.0
     helm:
       # Values file as block file
       values: |
