@@ -8,7 +8,7 @@ metadata:
 spec:
   project: production
   source:
-    path: infrastructure/nextcloud-3rdparty
+    path: production/nextcloud-3rdparty
     repoURL: https://github.com/ElioLopez/gitops-cluster.git
     targetRevision: HEAD
   destination:
