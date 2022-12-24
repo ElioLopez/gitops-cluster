@@ -25,21 +25,21 @@ spec:
               secretName: nextcloud
               usernameKey: username
               passwordKey: password
-          externalDatabase:
+        externalDatabase:
+          enabled: true
+          type: postgresql
+          host: nextcloud
+          database: nextcloud
+          existingSecret:
             enabled: true
-            type: postgresql
-            host: nextcloud
-            database: nextcloud
-            existingSecret:
-              enabled: true
-                secretName: nextcloud-postgres
-                usernameKey: superUser
-                passwordKey: superUserPassword
-          persistence:
-            enabled: true
-            storageClass: "synology-nas-synology-csi-retain"
-            accessMode: ReadWriteMany
-            size: 8Gi
+              secretName: nextcloud-postgres
+              usernameKey: superUser
+              passwordKey: superUserPassword
+        persistence:
+          enabled: true
+          storageClass: "synology-nas-synology-csi-retain"
+          accessMode: ReadWriteMany
+          size: 8Gi
 
   # Destination cluster and namespace to deploy the application
   destination:
