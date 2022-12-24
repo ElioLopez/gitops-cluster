@@ -25,6 +25,17 @@ spec:
             secretName: nextcloud
             usernameKey: username
             passwordKey: password
+        extraVolumes:
+          - name: photos-aldi
+            nfs:
+              server: "192.168.2.158"
+              path: "/volume1/fotitos/nextcloud-aldi"
+              readOnly: false
+          - name: photos-elio
+            nfs:
+              server: "192.168.2.158"
+              path: "/volume1/fotitos/nextcloud-elio"
+              readOnly: false
         externalDatabase:
           enabled: true
           type: postgresql
