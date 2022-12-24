@@ -3,11 +3,12 @@ kind: Kustomization
 
 resources:
 - nextcloud-postgres-sealed-secrets.yml
+- nextcloud-postgres.yaml
 #- origin-ca-service-key.yaml
 #- origin-issuer.yaml
 #- certificate.yaml
 #- ingressroute_tls.yaml
-#- nextcloud-postgres.yaml
-#- nextcloud-postgres-secret.yaml
+
+
 
 namespace: nextcloud
