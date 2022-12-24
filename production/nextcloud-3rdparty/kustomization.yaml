@@ -3,6 +3,7 @@ kind: Kustomization
 
 resources:
 - nextcloud-postgres-sealed-secrets.yml
+- nextcloud-sealed-secrets.yaml
 - nextcloud-postgres.yaml
 - origin-ca-service-key.yaml
 - origin-issuer.yaml
