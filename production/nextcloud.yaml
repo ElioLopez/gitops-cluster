@@ -22,9 +22,9 @@ spec:
           host: hdf9ywsqzf932p.elizondo.cloud
           existingSecret:
             enabled: true
-              secretName: nextcloud
-              usernameKey: username
-              passwordKey: password
+            secretName: nextcloud
+            usernameKey: username
+            passwordKey: password
         externalDatabase:
           enabled: true
           type: postgresql
@@ -32,9 +32,9 @@ spec:
           database: nextcloud
           existingSecret:
             enabled: true
-              secretName: nextcloud-postgres
-              usernameKey: superUser
-              passwordKey: superUserPassword
+            secretName: nextcloud-postgres
+            usernameKey: superUser
+            passwordKey: superUserPassword
         persistence:
           enabled: true
           storageClass: "synology-nas-synology-csi-retain"
