@@ -45,7 +45,7 @@ spec:
   destination:
     server: https://kubernetes.default.svc
     # The namespace will only be set for namespace-scoped resources that have not set a value for .metadata.namespace
-    namespace: synology-csi
+    namespace: nextcloud
 
   # Sync policy
   syncPolicy:
