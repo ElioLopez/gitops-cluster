@@ -14,8 +14,8 @@ spec:
       memory: "1Gi"  
       cpu: "500m"
     requests:
-      memory: "2Gi"
-      cpu: "1"
+      memory: "500m"
+      cpu: "250m"
     
   env:
     - name: POSTGRES_PASSWORD
