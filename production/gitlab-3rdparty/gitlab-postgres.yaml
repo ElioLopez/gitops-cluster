@@ -1,0 +1,30 @@
+apiVersion: kubegres.reactive-tech.io/v1
+kind: Kubegres
+metadata:
+  name: gitlab-pgsql
+  namespace: gitlab
+spec:
+  replicas: 3
+  image: postgres:14.1
+  database:
+    size: 8Gi
+    storageClassName: synology-nas-synology-csi-delete
+  resources:
+    limits:
+      memory: "1Gi"  
+      cpu: "500m"
+    requests:
+      memory: "500m"
+      cpu: "250m"
+    
+  env:
+    - name: POSTGRES_PASSWORD
+      valueFrom:
+        secretKeyRef:
+          name: gitlab-postgres
+          key: superUserPassword
+    - name: POSTGRES_REPLICATION_PASSWORD
+      valueFrom:
+        secretKeyRef:
+          name: gitlab-postgres
+          key: replicationUserPassword
