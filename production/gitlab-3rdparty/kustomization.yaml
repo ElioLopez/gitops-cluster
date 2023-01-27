@@ -5,9 +5,9 @@ resources:
 - gitlab-postgres-sealed-secrets.yaml
 #- gitlab-sealed-secrets.yaml
 - gitlab-postgres.yaml
-#- origin-ca-service-key.yaml
-#- origin-issuer.yaml
-#- certificate.yaml
+- origin-ca-service-key.yaml
+- origin-issuer.yaml
+- certificate.yaml
 #- ingressroute_tls.yaml
 
 namespace: gitlab
