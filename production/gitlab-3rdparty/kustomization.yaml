@@ -5,7 +5,7 @@ resources:
 - gitlab-postgres-sealed-secrets.yaml
 - gitlab-redis-sealed-secrets.yaml
 #- gitlab-sealed-secrets.yaml
-#- redis.yaml
+- redis.yaml
 - gitlab-postgres.yaml
 - origin-ca-service-key.yaml
 - origin-issuer.yaml
