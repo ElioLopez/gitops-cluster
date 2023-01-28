@@ -7,8 +7,6 @@ metadata:
     - resources-finalizer.argocd.argoproj.io
 spec:
   project: production
-
-  # Source of the application manifests
   source:
     repoURL: https://charts.bitnami.com/bitnami
     chart: redis
