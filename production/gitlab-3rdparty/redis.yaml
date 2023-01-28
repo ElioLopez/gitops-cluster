@@ -11,7 +11,7 @@ spec:
   # Source of the application manifests
   source:
     repoURL: https://charts.bitnami.com/bitnami
-    chart: bitnami/redis
+    chart: redis
     targetRevision: 17.6.0
     helm:
       # Values file as block file
