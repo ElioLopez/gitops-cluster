@@ -10,10 +10,11 @@ spec:
 
   # Source of the application manifests
   source:
-    repoURL: https://charts.bitnami.com/bitnami
+    repoURL: https://bitnami-labs.github.io/redis
     chart: redis
     targetRevision: 17.6.0
     helm:
+      releaseName: gitlab-redis
       # Values file as block file
       values: |
         global:
