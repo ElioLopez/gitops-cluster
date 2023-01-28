@@ -1,0 +1,18 @@
+global:
+  storageClass: "synology-nas-synology-csi-delete"
+volumePermissions:
+  enabled: true
+cluster:
+  enabled: true
+  slaveCount: 3
+replica:
+  nodeSelector:
+    kubernetes.io/arch: amd64
+master:
+  nodeSelector:
+    kubernetes.io/arch: amd64
+auth:
+  enabled: true
+  sentinel: true
+  existingSecret: "gitlab-redis"
+  existingSecretPasswordKey: "redisPassword"
