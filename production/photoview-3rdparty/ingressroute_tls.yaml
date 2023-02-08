@@ -1,0 +1,16 @@
+---
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: photoview-ingressroute
+spec:
+  entryPoints:
+    - websecure
+  routes:
+  - match: Host(`fotos.elizondo.cloud`)
+    kind: Rule
+    services:
+    - name: photoview
+      port: 80
+  tls:
+    secretName: origin-cert
