@@ -3,7 +3,7 @@ kind: Kustomization
 
 resources:
 - postgres-sealed-secrets.yaml
-#- postgres.yaml
+- postgres.yaml
 - origin-ca-service-key.yaml
 - origin-issuer.yaml
 - certificate.yaml
