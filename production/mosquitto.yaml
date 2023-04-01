@@ -11,8 +11,15 @@ spec:
     repoURL: https://storage.googleapis.com/t3n-helm-charts
     chart: mosquitto
     targetRevision: 2.4.1
-
-  # Destination cluster and namespace to deploy the application
+    helm:
+      # Values file as block file
+      values: |
+        persistence:
+          enabled: true
+          accessMode: ReadWriteOnce
+          mountPath: /mosquitto/data
+          storageClass: synology-nas-synology-csi-delete
+          size: 1Gi
   destination:
     server: https://kubernetes.default.svc
     # The namespace will only be set for namespace-scoped resources that have not set a value for .metadata.namespace
