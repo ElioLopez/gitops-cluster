@@ -8,9 +8,9 @@ metadata:
 spec:
   project: production
   source:
-    repoURL: https://k8s-at-home.com/charts
+    repoURL: https://storage.googleapis.com/t3n-helm-charts
     chart: mosquitto
-    targetRevision: 4.3.1
+    targetRevision: 2.4.1
 
   # Destination cluster and namespace to deploy the application
   destination:
