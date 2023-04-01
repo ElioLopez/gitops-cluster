@@ -20,6 +20,9 @@ spec:
           mountPath: /mosquitto/data
           storageClass: synology-nas-synology-csi-delete
           size: 1Gi
+        service:
+          type: ClusterIP
+          externalTrafficPolicy: LoadBalancer
   destination:
     server: https://kubernetes.default.svc
     # The namespace will only be set for namespace-scoped resources that have not set a value for .metadata.namespace
