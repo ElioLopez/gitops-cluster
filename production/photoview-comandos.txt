@@ -1,0 +1,22 @@
+chart choreado de:
+https://github.com/brandon099/charts/tree/add-chart-photoview/charts/stable/photoview
+
+#primero instalar postgresql
+kubectl apply -f postgresql-storage.yaml 
+helm install postgresql bitnami/postgresql --set primary.persistence.storageClass='synologi-csi-synology-csi-retain'
+
+
+echo -n 'mariadb-root' >./username.txt
+echo -n 'mariadb-password' >./password.txt 
+echo -n 'mariadb-root-password' >./root-password.txt 
+
+# Create generic secret object with keys username and password from files
+kubectl create secret generic mariadb --from-file=username=./username.txt --from-file=mariadb-password=./password.txt --from-file=mariadb-root-password=./root-password.txt
+secret/mariadb-secret created
+
+
+mysql --host=localhost --user=photoview --password=photoview
+
+
+
+helm install photoview  photoview --values=photoview-values.yaml -n photoview

@@ -1,0 +1,43 @@
+image:
+  repository: viktorstrate/photoview
+  tag:
+  pullPolicy: IfNotPresent
+env:
+  PHOTOVIEW_DATABASE_DRIVER: postgres
+  PHOTOVIEW_MEDIA_CACHE: /app/cache
+  PHOTOVIEW_DISABLE_FACE_RECOGNITION: false
+  PHOTOVIEW_DISABLE_VIDEO_ENCODING: false
+  PHOTOVIEW_DISABLE_RAW_PROCESSING: false
+  POSTGRES_PASSWORD:
+    valueFrom:
+      secretKeyRef:
+        name: photoview-postgres
+        key: superUserPassword
+  PHOTOVIEW_POSTGRES_URL: postgresql://postgres:$$(POSTGRES_PASSWORD)@photoview-pgsql/photoview
+service:
+  main:
+    ports:
+      http:
+        port: 80
+ingress:
+  main:
+    enabled: false
+persistence:
+  mediaCache:
+    enabled: false
+    mountPath: /app/cache
+    # storageClass: ""
+  photos: #the selected path should be /photos on the app!
+    enabled: true
+    type: nfs
+    server: '192.168.2.158'
+    path: /volume1/fotitos/photoview
+  photos-aldi: #the selected path should be /photos on the app!
+    enabled: true
+    type: nfs
+    server: '192.168.2.158'
+    path: /volume1/fotitos/photoview-aldi
+  sqlite:
+    enabled: false
+mariadb:
+  enabled: false
