@@ -9,6 +9,7 @@ helmCharts:
   repo: https://ElioLopez.github.io/helm-charts
   version: 0.3.3
   releaseName: gitops-cert-manager
+  namespace: synology-csi
   valuesInline:
     clientInfoSecretName: "synology-csi"
     storageClasses:
@@ -22,6 +23,7 @@ helmCharts:
         isDefault: true
       retain:
         deletionPolicy: Retain
+  valuesMerge: merge
 
 namespace: synology-csi
 

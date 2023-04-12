@@ -20,5 +20,10 @@ spec:
     automated:
       selfHeal: true
       prune: true
+      allowEmpty: false      
     syncOptions:
     - CreateNamespace=true
+    - Validate=true
+    - PrunePropagationPolicy=foreground
+    - PruneLast=true
+    - ApplyOutOfSync=true    
