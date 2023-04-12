@@ -11,6 +11,8 @@ spec:
     path: infrastructure/synology-csi
     repoURL: https://github.com/ElioLopez/gitops-cluster.git
     targetRevision: HEAD
+    plugin:
+      name: kustomize-build-with-helm    
   destination:
     namespace: synology-csi
     server: https://kubernetes.default.svc
@@ -20,5 +22,3 @@ spec:
       prune: true
     syncOptions:
     - CreateNamespace=true
-  plugin:
-    name: kustomize-build-with-helm    
