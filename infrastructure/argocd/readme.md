@@ -8,5 +8,5 @@ kubectl create secret generic argocd-tls \
 --output json --dry-run=client  | kubeseal \ 
 --scope cluster-wide \ 
 --controller-name sealed-secrets \ 
--n kube-system  > argocd-tls.yml
+-n kube-system  > base/argocd-tls.yml
 ```

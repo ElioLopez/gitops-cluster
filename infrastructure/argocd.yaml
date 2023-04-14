@@ -8,7 +8,7 @@ metadata:
 spec:
   project: infrastructure
   source:
-    path: infrastructure/argocd
+    path: infrastructure/argocd/base
     repoURL: https://github.com/ElioLopez/gitops-cluster.git
     targetRevision: HEAD
   destination:
