@@ -12,7 +12,7 @@ spec:
     repoURL: https://github.com/ElioLopez/gitops-cluster.git
     targetRevision: HEAD
     plugin:
-      name: kustomize-build-with-helm    
+      name: kustomize-enable-helm    
   destination:
     namespace: synology-csi
     server: https://kubernetes.default.svc

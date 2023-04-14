@@ -8,7 +8,7 @@ metadata:
 spec:
   project: infrastructure
   source:
-    path: infrastructure/argocd/base
+    path: infrastructure/argocd/overlays/enable-plugins
     repoURL: https://github.com/ElioLopez/gitops-cluster.git
     targetRevision: HEAD
   destination:
