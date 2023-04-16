@@ -5,7 +5,7 @@ Initial install on empty cluster (fresh installed)
 kubectl apply -k .
 
 ## infrastructure diagram
-![alt text](https://github.com/ElioLopez/gitops-cluster/blob/main/images/infrastructure-diagram.png?raw=true)
+![alt text](https://github.com/ElioLopez/gitops-cluster/blob/master/images/infrastructure-diagram.png?raw=true)
 
 ## infrastructure description
 
