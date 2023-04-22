@@ -8,6 +8,6 @@ resources:
 - certificate.yaml
 - ingressroute_tls.yaml
 - postgres_cm_init.yaml
-- postgres_db_init.yaml
+- postgres_db.yaml
 
 namespace: photoview
