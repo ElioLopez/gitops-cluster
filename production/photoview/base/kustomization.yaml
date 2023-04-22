@@ -7,5 +7,6 @@ resources:
 - origin-issuer.yaml
 - certificate.yaml
 - ingressroute_tls.yaml
+- postgres_cm_init.yaml
 
 namespace: photoview
