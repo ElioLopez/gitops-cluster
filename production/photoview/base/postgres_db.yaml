@@ -1,0 +1,32 @@
+apiVersion: kubegres.reactive-tech.io/v1
+kind: Kubegres
+metadata:
+  name: photoview-pgsql
+  namespace: photoview
+spec:
+  replicas: 3
+  image: postgres:14.1
+  database:
+    size: 1Gi
+    storageClassName: storage-synology-csi-delete
+  resources:
+    limits:
+      memory: "1Gi"  
+      cpu: "500m"
+    requests:
+      memory: "500m"
+      cpu: "250m"
+
+  customConfig: photoview-pg-init
+
+  env:
+    - name: POSTGRES_PASSWORD
+      valueFrom:
+        secretKeyRef:
+          name: photoview-postgres
+          key: superUserPassword
+    - name: POSTGRES_REPLICATION_PASSWORD
+      valueFrom:
+        secretKeyRef:
+          name: photoview-postgres
+          key: replicationUserPassword
