@@ -11,10 +11,10 @@ spec:
     storageClassName: storage-synology-csi-delete
   resources:
     limits:
-      memory: "100Mb"  
+      memory: "100Mi"  
       cpu: "25m"
     requests:
-      memory: "100Mb"
+      memory: "100Mi"
       cpu: "25m"
 
   customConfig: photoview-pg-init
