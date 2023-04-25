@@ -8,7 +8,7 @@ metadata:
 spec:
   project: infrastructure
   source:
-    path: infrastructure/kubegres-postgres
+    path: infrastructure/kubegres-postgres/base
     repoURL: https://github.com/ElioLopez/gitops-cluster.git
     targetRevision: HEAD
   destination:
