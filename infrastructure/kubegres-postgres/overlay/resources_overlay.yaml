@@ -1,0 +1,28 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    control-plane: controller-manager
+  name: kubegres-controller-manager
+  namespace: kubegres-system
+spec:
+  template:
+    spec:
+      containers:
+      - name: kube-rbac-proxy
+        resources:
+          limits:
+            cpu: 250m
+            memory: 128Mi
+          requests:
+            cpu: 5m
+            memory: 64Mi
+      - name: manager
+        resources:
+          limits:
+            cpu: 250m
+            memory: 128Mi
+          requests:
+            cpu: 10m
+            memory: 64Mi          
