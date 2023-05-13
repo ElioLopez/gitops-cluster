@@ -3,5 +3,5 @@ kind: Kustomization
 
 resources:
 - https://github.com/cert-manager/cert-manager/releases/download/v1.10.1/cert-manager.yaml
-
-
+- local-cluster-ca-secrets.yaml
+- cluster-issuer.yaml
