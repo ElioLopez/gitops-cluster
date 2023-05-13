@@ -1,0 +1,11 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: bitwarden-elizondo-local
+spec:
+  secretName: bitwarden-elizondo-local
+  issuerRef:
+    name: k3s-ca-cluster-issuer
+    kind: ClusterIssuer
+  dnsNames:
+  - bitwarden.elizondo.local

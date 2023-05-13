@@ -1,0 +1,16 @@
+---
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: bitwardeningressroute
+spec:
+  entryPoints:
+    - websecure
+  routes:
+  - match: Host(`bitwarden.elizondo.local`)
+    kind: Rule
+    services:
+    - name: bitwarden
+      port: 80
+  tls:
+    secretName: bitwarden-elizondo-local
