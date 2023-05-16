@@ -8,7 +8,7 @@ spec:
   entryPoints:
     - web
   routes:
-  - match: Host(`traefik.local`) || PathPrefix(`/dashboard`) || PathPrefix(`/api`)
+  - match: Host(`traefik.elizondo.local`) || PathPrefix(`/dashboard`) || PathPrefix(`/api`)
     kind: Rule
     services:
     - name: traefik
