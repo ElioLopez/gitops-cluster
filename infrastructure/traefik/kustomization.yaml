@@ -14,6 +14,9 @@ helmCharts:
   valuesInline:
     dashboard:
       enabled: true
+      matchRule: Host(`traefik.elizondo.local`) || PathPrefix(`/dashboard`) || PathPrefix(`/api`)
+      entryPoints: ["traefik", "web", "websecure"]
+      tls: traefik-elizondo-local
     ports:
       traefik:
         expose: true
