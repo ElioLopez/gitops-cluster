@@ -17,7 +17,6 @@ kubectl create secret generic synology-csi \
 --from-file=./client-info.yaml \
 --output json --dry-run=client | kubeseal \
 --scope cluster-wide \
---controller-name sealed-secrets \
 -n kube-system  >  sealed-secrets.yaml
 ```
 
