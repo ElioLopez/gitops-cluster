@@ -1,11 +1,14 @@
 apiVersion: cert-manager.io/v1
 kind: Certificate
 metadata:
-  name: bitwarden-elizondo-local
+  name: bitwarden-elizondo-cloud
 spec:
-  secretName: bitwarden-elizondo-local
-  issuerRef:
-    name: k3s-ca-cluster-issuer
-    kind: ClusterIssuer
+  secretName: bitwarden-elizondo-cloud
   dnsNames:
-  - bitwarden.elizondo.local
+    - bitwardem.elizondo.cloud
+  duration: 168h0m0s
+  renewBefore: 24h0m0s
+  issuerRef:
+    group: cert-manager.k8s.cloudflare.com
+    kind: OriginIssuer
+    name: prod-issuer

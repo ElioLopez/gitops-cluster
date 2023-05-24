@@ -7,10 +7,10 @@ spec:
   entryPoints:
     - websecure
   routes:
-  - match: Host(`bitwarden.elizondo.local`)
+  - match: Host(`bitwarden.elizondo.cloud`)
     kind: Rule
     services:
     - name: bitwarden
       port: 80
   tls:
-    secretName: bitwarden-elizondo-local
+    secretName: bitwarden-elizondo-cloud
