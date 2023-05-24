@@ -5,7 +5,7 @@ metadata:
 spec:
   secretName: bitwarden-elizondo-cloud
   dnsNames:
-    - bitwardem.elizondo.cloud
+    - bitwarden.elizondo.cloud
   duration: 168h0m0s
   renewBefore: 24h0m0s
   issuerRef:
