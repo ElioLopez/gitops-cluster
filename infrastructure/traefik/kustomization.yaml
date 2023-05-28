@@ -23,6 +23,13 @@ helmCharts:
     logs:
       access:
         enabled: true
+    kubernetes:
+      ingressEndpoint:
+        useDefaultPublishedService: true
+    providers:
+      kubernetesIngress:
+        publishedService:
+          enabled: true
   valuesMerge: merge
 
 namespace: kube-system
