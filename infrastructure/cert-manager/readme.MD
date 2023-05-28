@@ -1,8 +1,8 @@
-```
-kubectl create secret generic \
-origin-ca-service-key \
---from-literal=key='v1.xxxxxxx' \
---output json --dry-run=client  | kubeseal --controller-name sealed-secrets  \
---scope cluster-wide -n kube-system  > origin-ca-service-key.yaml
-```
+to inject the CA on the cluster to be used for cert-manager, go to the folder where the ca and ca-key is located:
 
+kubectl --namespace cert-manager \
+  create secret tls k3s-ca-key-pair \
+  --cert=ca.pem \
+  --key=ca-key.pem \
+  --output json --dry-run=client  | kubeseal  \
+--scope cluster-wide -n kube-system  > ca-local-cluster-issuer.yaml
