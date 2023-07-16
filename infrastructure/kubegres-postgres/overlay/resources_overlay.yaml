@@ -13,7 +13,7 @@ spec:
       - name: kube-rbac-proxy
         resources:
           limits:
-            cpu: 250m
+            cpu: 150m
             memory: 128Mi
           requests:
             cpu: 5m
@@ -21,7 +21,7 @@ spec:
       - name: manager
         resources:
           limits:
-            cpu: 250m
+            cpu: 150m
             memory: 128Mi
           requests:
             cpu: 10m
