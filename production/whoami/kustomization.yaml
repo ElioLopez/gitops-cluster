@@ -4,5 +4,8 @@ kind: Kustomization
 resources:
 - deployment.yaml
 - ingress.yaml
+- origin-ca-service-key.yaml
+- origin-issuer.yaml
+- certificate.yaml
 
 namespace: whoami
