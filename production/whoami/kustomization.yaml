@@ -3,9 +3,9 @@ kind: Kustomization
 
 resources:
 - deployment.yaml
-- ingress.yaml
 - origin-ca-service-key.yaml
 - origin-issuer.yaml
 - certificate.yaml
+- ingressroute_tls.yaml
 
 namespace: whoami
