@@ -8,6 +8,6 @@ resources:
 - origin-ca-service-key.yaml
 - origin-issuer.yaml
 - certificate.yaml
-- ingressroute_tls.yaml
+#- ingressroute_tls.yaml
 
 namespace: nextcloud
